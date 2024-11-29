@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: opss-api
+  version: 1.0.0
+paths:
+  /auth/access-token:
+    post:
+      responses:
+        '200':
+          description: 请求成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    const: true
+                  data:
+                    type: object
+                    properties:
+                      access_token:
+                        type: string
+                    required:
+                      - access_token
+                required:
+                  - success
+                  - data
+      parameters: []
+      x-controller-annotations:
+        - Post
+      tags:
+        - ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+              required:
+                - code
+  /:
+    get:
+      responses:
+        '200':
+          description: 请求成功
+          content:
+            application/json:
+              schema:
+                type: string
+      parameters: []
+      x-controller-annotations:
+        - Get
+      tags:
+        - ''
+components:
+  schemas: {}

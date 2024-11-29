@@ -1,3 +1,7 @@
 <template>
-  <div class="text-3xl font-bold underline flex items-center justify-center h-screen">hi</div>
+  <router-view />
+  <Toaster />
 </template>
+<script setup lang="ts">
+import { Toaster } from '@/components/ui/toast';
+</script>
